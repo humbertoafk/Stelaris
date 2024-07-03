@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  section.list-container
+    h1 Lista de Objetos del Cielo Profundo
+    ul
+      each object in deepSkyObjects
+        li
+          a(href=`/deepSkyObjects/detail/${object.id}`) #{object.name}

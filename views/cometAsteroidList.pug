@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  section.list-container
+    h1 Lista de Cometas y Asteroides
+    ul
+      each object in cometAsteroids
+        li
+          a(href=`/cometAsteroids/detail/${object.id}`) #{object.name}

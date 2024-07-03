@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  .details-container
+    h1 #{object.name}
+    if image
+      img(src=image.links[0].href, alt=image.data[0].title)
+    .details-content
+      h2 Datos Científicos
+      p
+        | Tipo: #{object.type}
+      p
+        | Distancia: #{object.distance} años luz
+      p
+        | Tamaño: #{object.size} años luz
+      h2 Características Visuales
+      p #{object.visual_characteristics}
+      h2 Datos Científicos Relevantes
+      p #{object.scientific_data}

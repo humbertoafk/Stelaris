@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  section.list-container
+    h1 Lista de Planetas del Sistema Solar
+    ul
+      each planet in planets
+        li
+          a(href=`/planets/detail/${planet.id}`) #{planet.name}

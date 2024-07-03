@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  .details-container
+    h1 #{object.name}
+    if image
+      img(src=image.links[0].href, alt=image.data[0].title)
+    .details-content
+      h2 Datos Científicos
+      p
+        | Órbita: #{object.orbit}
+      p
+        | Tamaño: #{object.size} km
+      p
+        | Composición: #{object.composition}
+      h2 Eventos Notables
+      p #{object.notable_events}

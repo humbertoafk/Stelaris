@@ -1,0 +1,36 @@
+extends layout
+
+block content
+  section.search-results
+    h1 Resultados de Búsqueda para "#{query}"
+
+    if stars.length
+      h2 Estrellas
+      ul
+        each star in stars
+          li
+            a(href=`/stars/detail/${star.id}`) #{star.name}
+    
+    if planets.length
+      h2 Planetas del Sistema Solar
+      ul
+        each planet in planets
+          li
+            a(href=`/planets/detail/${planet.id}`) #{planet.name}
+    
+    if deepSkyObjects.length
+      h2 Objetos del Cielo Profundo
+      ul
+        each object in deepSkyObjects
+          li
+            a(href=`/deepSkyObjects/detail/${object.id}`) #{object.name}
+    
+    if cometAsteroids.length
+      h2 Cometas y Asteroides
+      ul
+        each object in cometAsteroids
+          li
+            a(href=`/cometAsteroids/detail/${object.id}`) #{object.name}
+
+    if !stars.length && !planets.length && !deepSkyObjects.length && !cometAsteroids.length
+      p No se encontraron resultados.

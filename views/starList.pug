@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  section.list-container
+    h1 Lista de Estrellas
+    ul
+      each star in stars
+        li
+          a(href=`/stars/detail/${star.id}`) #{star.name}

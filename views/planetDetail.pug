@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  .details-container
+    h1 #{object.name}
+    if image
+      img(src=image.links[0].href, alt=image.data[0].title)
+    .details-content
+      h2 Datos Científicos
+      p
+        | Tamaño: #{object.size} km
+      p
+        | Masa: #{object.mass} x10^24 kg
+      p
+        | Composición: #{object.composition}
+      p
+        | Atmósfera: #{object.atmosphere}
+      p
+        | Lunas: #{object.moons}
+      h2 Misiones Espaciales
+      p #{object.space_missions}
+      h2 Características Notables
+      p #{object.notable_features}

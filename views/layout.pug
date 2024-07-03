@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    title Stelaris
+    link(rel='stylesheet', href='/css/styles.css')
+    link(rel='icon', href='cthulhu.png', type='image/x-icon')
+  body
+    header
+      nav
+        ul
+          li: a(href='/') Inicio
+          li: a(href='/stars') Estrellas
+          li: a(href='/planets') Planetas del Sistema Solar
+          li: a(href='/deepSkyObjects') Objetos del Cielo Profundo
+          li: a(href='/cometAsteroids') Cometas y Asteroides
+          li
+            form(action='/search', method='get')
+              input(type='text', name='query', placeholder='Buscar objetos celestes...')
+              button(type='submit') Buscar
+              
+      // Botón de retroceso (no se muestra en la página principal)
+      if !isMainPage
+        button.back-button(onclick='window.history.back()') Volver
+    
+    block content
+    script.
+      function goBack() {
+        window.history.back();
+      }

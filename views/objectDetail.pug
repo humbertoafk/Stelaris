@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  h1 #{object.name}
+  
+  if object.image
+    img(src=object.image, alt=object.name)
+  
+  h2 Datos Científicos
+  p
+    | Tipo Espectral: #{object.spectral_type}
+  p
+    | Magnitud: #{object.magnitude}
+  p
+    | Distancia: #{object.distance} años luz
+  p
+    | Constelación: #{object.constellation}
+  p
+    | Composición: #{object.composition}
+  
+  h2 Datos Históricos y Culturales
+  p #{object.historical_data}
+  p #{object.mythological_data}
+  

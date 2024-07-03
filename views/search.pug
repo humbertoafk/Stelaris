@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  section
+    h1 Buscar Objetos Celestes
+
+    form(action='/search', method='get')
+      input(type='text', name='query', placeholder='Buscar objetos celestes...')
+      
+      // Añadir filtros
+      div
+        label(for='type') Tipo:
+        select(name='type')
+          option(value='') --Seleccionar tipo--
+          option(value='star') Estrella
+          option(value='planet') Planeta
+          option(value='deepSkyObject') Objeto del Cielo Profundo
+          option(value='cometAsteroid') Cometa/Asteroide
+      
+      div
+        label(for='magnitude') Magnitud Aparente:
+        input(type='number', name='magnitude', placeholder='Magnitud aparente')
+      
+      button(type='submit') Buscar
